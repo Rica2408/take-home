@@ -2,8 +2,9 @@ import { Alert, Box, Button, Typography } from "@mui/material"
 import { useMutation } from "@tanstack/react-query"
 import axios from "axios"
 import { Link, useNavigate, useParams } from "react-router-dom"
-import Dog, { DogType } from "../components/Dog"
+import Dog from "../components/Dog"
 import { useEffect } from "react"
+import { DogType } from "../types/types"
 
 const MatchDog = () => {
     const { dogId } = useParams()

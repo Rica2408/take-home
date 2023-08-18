@@ -1,14 +1,6 @@
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
-
-export interface DogType {
-    id: string
-    img: string
-    name: string
-    age: number
-    zip_code: string
-    breed: string
-}
+import { DogType } from '../types/types';
 
 interface DogProps {
     dog: DogType

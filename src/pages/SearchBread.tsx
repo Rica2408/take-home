@@ -14,8 +14,9 @@ import {
 } from '@tanstack/react-query'
 import axios from "axios";
 import { useBreed } from '../api'
-import Dog, { DogType } from '../components/Dog';
+import Dog from '../components/Dog';
 import { Link, useNavigate } from 'react-router-dom';
+import { DogType } from '../types/types';
 
 type ParamsType = {
     breeds?: string[],
