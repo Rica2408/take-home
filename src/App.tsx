@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import LogIn from "./pages/LogIn"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom"
+import SearchBread from "./pages/SearchBread"
+import { Box } from "@mui/material"
+import MatchDog from "./pages/MatchDog"
+const queryClient = new QueryClient()
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Box width="100%" height="100%">
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<LogIn />} />
+            <Route path="/search" element={<SearchBread />} />
+            <Route path="/matchDog/:dogId" element={<MatchDog />} />
+          </Routes>
+        </Router>
+      </QueryClientProvider>
+    </Box>
+  )
 }
 
-export default App;
+export default App
